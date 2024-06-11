@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Général</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Gérer les Utilisateurs</h1>
+        <table border="2">
+            <tr>
+                <td><a href="etudiantenvoyer.html"><input type="button" name="Envoyer" value="ENVOYER"></a></td>
+                <td><a href=""><input type="button" name="supprimer" value="SUPPRIMER"></a></td>
+            </tr>
+            <tr>
+                <td><a href="AFICHER LE DOC.php"><input type="button" name="afficher" value="AFFICHER"></a></td>
+                <td><a href="recherche.html"><input type="button" name="rechercher" value="RECHERCHER"></a></td>
+            </tr>
+            <tr>
+                <td colspan="2"><center><a href="recher.html"><input type="button" name="modifier" value="MODIFIER"></a></center></td>
+            </tr>
+            <tr><td colspan="2"><a href="MENUADMIN.HTML"><input type="button" name="retour" value="RETOUR"></a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

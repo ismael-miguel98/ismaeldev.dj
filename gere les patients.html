@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Général</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(doc2.jpg);
+        background-repeat: inherit;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Masquer le tableau par défaut */
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styles pour le header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            transition: top 0.3s; /* Ajouter une transition pour une apparence plus fluide */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                padding: 10px 20px;
+                box-sizing: border-box;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                margin: 5px;
+            }
+
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            input[type="checkbox"]:checked + nav {
+                display: block;
+            }
+        }
+        .toggle-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+        footer{
+    position: fixed;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    height: 6%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <header id="main-header">
+
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li>
+                    <a href="A.html">Home</a>
+                </li>
+                <li>
+                    <a href="About.html">About_us</a>
+                </li>
+                <li>
+                        <a href="formulaire d'insrciption.php">conctact</a>
+                    </li>
+            
+                <li>
+                <a href="connrdv.php">Make an appointment</a>
+                </li>
+                <li>
+                        <a href="robot_form.php">patients_Account</a>
+                 </li>
+                 <li>
+                        <a href="Connexion_medecin.php">Medecin_Account</a>
+                    </li>
+                    <li>
+                        <a href="login_ad.php">Administrator_diag_Medical</a>
+                    </li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        </header>
+    
+<div class="container">
+    <h1>Gérer les patients_Account</h1>
+    <table border="2">
+        <tr>
+            <td><a href="envoyer_pat.php"><input type="button" name="Envoyer" value="ENVOYER"></a></td>
+            <td><a href="supp_pat.php"><input type="button" name="supprimer" value="SUPPRIMER"></a></td>
+        </tr>
+        <tr>
+            <td><a href="affiche_pat.php"><input type="button" name="afficher" value="AFFICHER"></a></td>
+            <td><a href="recherche_pat.php"><input type="button" name="rechercher" value="RECHERCHER"></a></td>
+        </tr>
+        <tr>
+            <td colspan="2"><center><a href="modifier_pat.php"><input type="button" name="modifier" value="MODIFIER"></a></center></td>
+        </tr>
+        <tr><td colspan="2"><a href="MENUADMIN.HTML"><input type="button" name="retour" value="RETOUR"></a></td>
+        </tr>
+    </table>
+</div>
+
+<button class="toggle-button" onclick="toggleTable()">Afficher le tableau de gestion des Patients</button>
+<script>
+    // Afficher le bouton pour afficher le tableau
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector('.toggle-button').style.display = 'block';
+    });
+
+    function toggleTable(button) {
+        var table = document.querySelector('.container');
+        if (table.style.display === 'none') {
+            table.style.display = 'block';
+            button.style.display = 'none'; // Cacher le bouton une fois le tableau affiché
+        } else {
+            table.style.display = 'none';
+        }
+    }
+</script>
+</body>
+<footer class="footer">
+    <p> @copy_right Gerer les Patients</p>
+</footer>
+</html>
